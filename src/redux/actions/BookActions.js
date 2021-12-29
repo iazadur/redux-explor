@@ -10,3 +10,9 @@ export function removeFromReadingList(payload) {
         payload
     }
 }
+export function addtoFinishedList(payload) {
+    return {
+        type: "ADD_TO_FINISHED_LIST",
+        payload
+    }
+}

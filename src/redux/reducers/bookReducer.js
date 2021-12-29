@@ -16,6 +16,10 @@ export default function bookReducer(state = initialState, action) {
             const newState = {...state, readingList: state.readingList.filter((book)=>book.id !== action.payload)}
             return newState
         }
+        case "ADD_TO_FINISHED_LIST": {
+            const newState = {...state,readingList: state.readingList.filter((book)=>book.id !== action.payload.id), finishedList: [...state.finishedList, action.payload]}
+            return newState
+        }
 
         default:
             return state
